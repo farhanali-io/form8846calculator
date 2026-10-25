@@ -2,6 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calculator } from '../components/Calculator';
 import { SEO } from '../components/SEO';
+import { LiquidGlass } from '@/components/ui/liquid-glass';
+import {
+  IconCheck,
+  IconArrowRight,
+  IconReceiptTax,
+  IconScale,
+  IconBuildingStore,
+  IconSparkles,
+} from '@tabler/icons-react';
 
 export const HomePage: React.FC = () => {
   return (
@@ -10,199 +19,240 @@ export const HomePage: React.FC = () => {
         title="Form 8846 Calculator: FICA Tip Credit (Free)"
         description="Free Form 8846 calculator. Estimate your FICA tip credit from reported tips, hours, and cash wages. No login. Built for restaurant and bar owners."
       />
-      <h1>Form 8846 Calculator: FICA Tip Credit</h1>
 
-      {/* CALCULATOR */}
+      {/* Calculator Section - opens immediately at the front */}
       <Calculator />
 
-      <p>
-        This calculator estimates the employer FICA tip credit on IRS Form 8846. Enter your reported tips,
-        hours worked, and cash wages paid, and it returns your creditable tips and the credit amount. It is
-        built for owners, bookkeepers, and payroll managers at restaurants, bars, and other food and
-        beverage businesses.
-      </p>
+      <div className="print:hidden">
+        {/* Value Pillars Grid in LiquidGlass */}
+        <section className="mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <LiquidGlass
+            tint={0.06}
+            scale={20}
+            bevelDepth={8}
+            className="p-6 border border-white/15 bg-neutral-950/80 rounded-2xl shadow-xl"
+          >
+            <div className="size-10 rounded-xl bg-white text-black flex items-center justify-center mb-4 font-bold shadow-md">
+              <IconReceiptTax className="size-5" />
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2 tracking-tight">7.65% Employer Credit</h3>
+            <p className="text-sm text-neutral-400 leading-relaxed font-normal">
+              Recovers the employer share of FICA: 6.20% Social Security plus 1.45% Medicare on creditable tips under IRC §45B.
+            </p>
+          </LiquidGlass>
 
-      <h2>How the Form 8846 Credit Is Calculated</h2>
-      <p>
-        When employees report tips, you owe employer Social Security and Medicare tax on them. Form 8846
-        gives part of that tax back as an income tax credit. The credit is 7.65% of your{' '}
-        <strong>creditable tips</strong>: 6.2% for Social Security plus 1.45% for Medicare. It covers the
-        employer's share only.
-      </p>
-      <p>
-        The math has four steps. They match Lines 1 through 4 of the form, which our{' '}
-        <Link to="/form-8846-instructions">Form 8846 instructions walkthrough</Link> explains one line at a time.
-      </p>
-      <ol>
-        <li>Add up the tips employees reported to you, on which you paid employer FICA tax.</li>
-        <li>
-          Find the tips that do not count. For each employee, take $5.15 times hours worked, then subtract the
-          cash wages you paid. If the answer is zero or less, nothing is excluded.
-        </li>
-        <li>Subtract step 2 from step 1. The result is your creditable tips.</li>
-        <li>Multiply creditable tips by 7.65%.</li>
-      </ol>
-      <p>
-        In one line: <strong>Credit = (reported tips - excluded tips) × 7.65%</strong>, where excluded tips =
-        ($5.15 × hours) - cash wages, never below zero and never more than the employee's tips.
-      </p>
-      <p>
-        The Social Security part has a ceiling. The 6.2% rate applies only to an employee's wages and tips up
-        to the Social Security wage base (for 2026, $176,100). Tips above that point earn only the 1.45%
-        Medicare rate. Check any employee whose wages plus tips come close to the base.
-      </p>
+          <LiquidGlass
+            tint={0.06}
+            scale={20}
+            bevelDepth={8}
+            className="p-6 border border-white/15 bg-neutral-950/80 rounded-2xl shadow-xl"
+          >
+            <div className="size-10 rounded-xl bg-white text-black flex items-center justify-center mb-4 font-bold shadow-md">
+              <IconScale className="size-5" />
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2 tracking-tight">$5.15 Frozen Floor</h3>
+            <p className="text-sm text-neutral-400 leading-relaxed font-normal">
+              Tips needed to bring wages up to $5.15/hr are excluded on Line 2. Any direct cash wages paid reduce this exclusion.
+            </p>
+          </LiquidGlass>
 
-      <h2>What Counts as Creditable Tips</h2>
-      <p>A tip is creditable when all of these are true:</p>
-      <ul>
-        <li>
-          A customer gave it for providing, delivering, or serving food or drinks, in a business where
-          tipping is customary.
-        </li>
-        <li>The employee reported it to you.</li>
-        <li>You paid or incurred employer FICA tax on it.</li>
-        <li>It is not needed to bring the employee's pay up to the $5.15 hourly floor.</li>
-      </ul>
-      <p>
-        Not every business that receives tips qualifies. Tips for haircuts, massages, or hotel services fall
-        outside the credit. Our <Link to="/fica-tip-credit-calculator">FICA tip credit guide</Link> has a
-        full table of eligible and non-eligible tips, and salon owners should read the{' '}
-        <Link to="/salon-tip-credit-calculator">salon tip credit page</Link> before assuming they qualify.
-        Restaurant operators can find examples on the{' '}
-        <Link to="/restaurant-tip-credit-calculator">restaurant tip credit page</Link>.
-      </p>
+          <LiquidGlass
+            tint={0.06}
+            scale={20}
+            bevelDepth={8}
+            className="p-6 border border-white/15 bg-neutral-950/80 rounded-2xl shadow-xl"
+          >
+            <div className="size-10 rounded-xl bg-white text-black flex items-center justify-center mb-4 font-bold shadow-md">
+              <IconBuildingStore className="size-5" />
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2 tracking-tight">Food & Beverage Focus</h3>
+            <p className="text-sm text-neutral-400 leading-relaxed font-normal">
+              Designed specifically for restaurants, bars, caterers, and food service businesses where tipping is customary.
+            </p>
+          </LiquidGlass>
+        </div>
+      </section>
 
-      <h3>The $5.15 rule</h3>
-      <p>
-        Section 45B of the tax code sets $5.15 as the hourly wage floor for this credit. That was the federal
-        minimum wage on January 1, 2007. The credit does not cover tips that are needed to bring an employee's
-        pay up to $5.15 an hour. If you already pay at least $5.15 an hour in cash wages, nothing is excluded
-        and all reported tips count.
-      </p>
-      <p>
-        The figure is frozen. It stays $5.15 even though the federal minimum wage is higher today. Read why
-        in our <Link to="/5-15-minimum-wage-tip-credit-rule">$5.15 rule explainer</Link>. Your state's tipped
-        wage matters only because it sets the cash wage you enter. See{' '}
-        <Link to="/tip-credit-rules-by-state">tip credit rules by state</Link> for the numbers.
-      </p>
+      {/* Core Guide Content Section */}
+      <section className="space-y-10 text-neutral-300">
+        {/* How credit is calculated */}
+        <LiquidGlass
+          tint={0.06}
+          scale={24}
+          bevelDepth={10}
+          className="p-8 border border-white/15 bg-neutral-950/80 rounded-3xl shadow-xl"
+        >
+          <h2 className="text-2xl font-bold text-white mb-4 tracking-tight flex items-center gap-2">
+            <IconSparkles className="size-6 text-white" />
+            How the Form 8846 Credit Is Calculated
+          </h2>
+          <p className="text-neutral-300 leading-relaxed mb-4">
+            When employees report tips, you owe employer Social Security and Medicare tax on them. Form 8846 gives part of that tax back as a dollar-for-dollar general business income tax credit. The credit is 7.65% of your <strong className="text-white font-bold">creditable tips</strong>: 6.2% for Social Security plus 1.45% for Medicare.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+            <div className="p-4 rounded-xl bg-white/[0.04] border border-white/10">
+              <span className="text-xs font-bold text-white uppercase tracking-wider">Step 1 & 2</span>
+              <p className="text-sm text-neutral-300 mt-1">
+                Add total reported tips with FICA paid (Line 1). Calculate tips excluded below the $5.15 wage floor (Line 2).
+              </p>
+            </div>
+            <div className="p-4 rounded-xl bg-white/[0.04] border border-white/10">
+              <span className="text-xs font-bold text-white uppercase tracking-wider">Step 3 & 4</span>
+              <p className="text-sm text-neutral-300 mt-1">
+                Subtract Line 2 from Line 1 to find creditable tips (Line 3). Multiply Line 3 by 7.65% to determine your credit (Line 4).
+              </p>
+            </div>
+          </div>
+          <div className="p-4 rounded-xl bg-white/[0.05] border border-white/15 text-sm text-white font-medium">
+            <strong>Formula:</strong> Credit = (Reported Tips − Excluded Tips) × 7.65%, where Excluded Tips = ($5.15 × Hours) − Cash Wages (minimum $0).
+          </div>
+        </LiquidGlass>
 
-      <h2>Worked Example</h2>
-      <p>
-        A server reported $25,000 in tips over the year and worked 1,800 hours. The restaurant paid a cash
-        wage of $2.13 an hour.
-      </p>
-      <table>
-        <thead>
-          <tr>
-            <th>Step</th>
-            <th>Calculation</th>
-            <th>Result</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Pay at the $5.15 floor</td>
-            <td>1,800 × $5.15</td>
-            <td>$9,270</td>
-          </tr>
-          <tr>
-            <td>Cash wages paid</td>
-            <td>1,800 × $2.13</td>
-            <td>$3,834</td>
-          </tr>
-          <tr>
-            <td>Excluded tips (Line 2)</td>
-            <td>$9,270 - $3,834</td>
-            <td>$5,436</td>
-          </tr>
-          <tr>
-            <td>Creditable tips (Line 3)</td>
-            <td>$25,000 - $5,436</td>
-            <td>$19,564</td>
-          </tr>
-          <tr>
-            <td>Credit (Line 4)</td>
-            <td>$19,564 × 7.65%</td>
-            <td>$1,496.65</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        Now suppose the same server works where the cash wage is $12 an hour. Wages already exceed $5.15, so
-        no tips are excluded. Creditable tips are the full $25,000, and the credit is $1,912.50.
-      </p>
-      <p>
-        One caution. The IRS figures Line 2 for each employee, month by month. Annual totals work fine for one
-        employee with steady pay. For a full staff with mixed wage rates, run each person separately or ask
-        your payroll provider for monthly detail. One employee's high wages cannot cover another employee's
-        shortfall.
-      </p>
+        {/* Worked Example */}
+        <LiquidGlass
+          tint={0.06}
+          scale={24}
+          bevelDepth={10}
+          className="p-8 border border-white/15 bg-neutral-950/80 rounded-3xl shadow-xl"
+        >
+          <h2 className="text-2xl font-bold text-white mb-3 tracking-tight">Worked Example ($25,000 Tips, 1,800 Hours)</h2>
+          <p className="text-neutral-400 text-sm mb-5">
+            A server reported $25,000 in tips over the year and worked 1,800 hours. The restaurant paid a cash wage of $2.13/hr.
+          </p>
 
-      <h2>Common Mistakes</h2>
-      <ul>
-        <li>
-          <strong>Skipping cash wages.</strong> Subtracting $5.15 × hours from tips without subtracting the
-          cash wages you paid understates your credit.
-        </li>
-        <li>
-          <strong>Using today's minimum wage.</strong> The floor is $5.15, not the current federal or state
-          minimum.
-        </li>
-        <li>
-          <strong>Including the employee's share.</strong> Only the employer's 7.65% counts. Do not add what
-          you withheld from paychecks.
-        </li>
-        <li>
-          <strong>Counting unreported tips or service charges.</strong> The credit needs reported tips with
-          employer FICA paid. Mandatory service charges are generally treated as wages, not tips.
-        </li>
-        <li>
-          <strong>Ignoring the wage base.</strong> Above the Social Security wage base, only the 1.45%
-          Medicare rate applies.
-        </li>
-        <li>
-          <strong>Deducting the same amount twice.</strong> You cannot also deduct the credit amount as
-          payroll expense. Your preparer needs to reduce the deduction.
-        </li>
-      </ul>
+          <div className="overflow-x-auto rounded-2xl border border-white/15 bg-black/60">
+            <table className="w-full text-left text-sm border-collapse m-0 border-none">
+              <thead>
+                <tr className="border-b border-white/15 text-neutral-400 bg-white/[0.02]">
+                  <th className="py-3 px-4 font-bold text-white">Form Step</th>
+                  <th className="py-3 px-4 font-bold text-white">Calculation</th>
+                  <th className="py-3 px-4 text-right font-bold text-white">Result</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/10">
+                <tr>
+                  <td className="py-3 px-4 text-neutral-300 font-medium">Pay at the $5.15 floor</td>
+                  <td className="py-3 px-4 text-neutral-400">1,800 hrs × $5.15</td>
+                  <td className="py-3 px-4 text-right text-white font-semibold tabular-nums">$9,270.00</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 text-neutral-300 font-medium">Cash wages paid</td>
+                  <td className="py-3 px-4 text-neutral-400">1,800 hrs × $2.13</td>
+                  <td className="py-3 px-4 text-right text-white font-semibold tabular-nums">$3,834.00</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 text-neutral-300 font-medium">Excluded tips (Line 2)</td>
+                  <td className="py-3 px-4 text-neutral-400">$9,270.00 − $3,834.00</td>
+                  <td className="py-3 px-4 text-right text-neutral-400 font-semibold tabular-nums">$5,436.00</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 text-white font-bold">Creditable tips (Line 3)</td>
+                  <td className="py-3 px-4 text-neutral-400">$25,000.00 − $5,436.00</td>
+                  <td className="py-3 px-4 text-right text-white font-bold tabular-nums">$19,564.00</td>
+                </tr>
+                <tr className="bg-white text-black font-extrabold">
+                  <td className="py-3.5 px-4 text-black font-bold">Total Credit (Line 4)</td>
+                  <td className="py-3.5 px-4 text-neutral-800">$19,564.00 × 7.65%</td>
+                  <td className="py-3.5 px-4 text-right text-black text-base tabular-nums font-black">$1,496.65</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </LiquidGlass>
 
-      <h2>FAQ</h2>
-      <h3>Do I need to file Form 8846 separately?</h3>
-      <p>
-        Yes, in most cases. Form 8846 is its own form, filed with your income tax return, and the result
-        carries to Form 3800 (General Business Credit). Owners of a partnership or S corporation whose only
-        source of the credit is that entity can skip Form 8846 and report their share directly on Form 3800.
-      </p>
+        {/* What Counts & Rules */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <LiquidGlass
+            tint={0.06}
+            scale={20}
+            bevelDepth={8}
+            className="p-6 border border-white/15 bg-neutral-950/80 rounded-2xl shadow-xl"
+          >
+            <h3 className="text-lg font-bold text-white mb-3">Eligible Tips</h3>
+            <ul className="space-y-2 text-sm text-neutral-300">
+              <li className="flex items-start gap-2">
+                <IconCheck className="size-4 text-white mt-0.5 shrink-0" />
+                <span>Customer tips for food and drink provision or delivery</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <IconCheck className="size-4 text-white mt-0.5 shrink-0" />
+                <span>Reported by employee on Form 4070 or POS report</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <IconCheck className="size-4 text-white mt-0.5 shrink-0" />
+                <span>Employer FICA taxes paid or incurred by employer</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <IconCheck className="size-4 text-white mt-0.5 shrink-0" />
+                <span>Tips above the $5.15 statutory wage floor</span>
+              </li>
+            </ul>
+          </LiquidGlass>
 
-      <h3>Does this credit apply to the employee's share of FICA?</h3>
-      <p>
-        No. The credit covers only the employer's share, 7.65% of creditable tips. The 7.65% withheld from
-        employees' paychecks is not part of it.
-      </p>
+          <LiquidGlass
+            tint={0.06}
+            scale={20}
+            bevelDepth={8}
+            className="p-6 border border-white/15 bg-neutral-950/80 rounded-2xl shadow-xl"
+          >
+            <h3 className="text-lg font-bold text-white mb-3">Excluded From Credit</h3>
+            <ul className="space-y-2 text-sm text-neutral-300">
+              <li className="flex items-start gap-2">
+                <span className="text-neutral-400 font-bold shrink-0">✕</span>
+                <span>Mandatory service charges (treated as direct wages)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-neutral-400 font-bold shrink-0">✕</span>
+                <span>Tips for salon, hotel, or personal services</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-neutral-400 font-bold shrink-0">✕</span>
+                <span>Unreported cash tips with no employer FICA paid</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-neutral-400 font-bold shrink-0">✕</span>
+                <span>Tips paid to 1099 independent contractors</span>
+              </li>
+            </ul>
+          </LiquidGlass>
+        </div>
 
-      <h3>Is the $5.15 figure the same as my state's minimum wage?</h3>
-      <p>
-        No. $5.15 is the federal minimum wage as of January 1, 2007, and it is fixed in the tax code. Your
-        state's cash wage for tipped workers only changes how much you enter as cash wages paid.
-      </p>
-
-      <h3>Can I claim the credit for earlier years?</h3>
-      <p>
-        Often yes, by filing an amended return within the normal time limit, which is generally three years.
-        Ask your CPA to confirm the deadline for your situation.
-      </p>
-
-      <h3>Does the credit reduce my tax deduction?</h3>
-      <p>
-        Yes. You cannot deduct the same amount as wages or payroll tax expense, so your deduction drops by the
-        amount of the credit. Your tax preparer makes this adjustment.
-      </p>
-
-      <div className="disclaimer">
-        <p>This tool is for estimation only. Consult a CPA or tax professional before filing.</p>
+        {/* Quick Reference Links */}
+        <LiquidGlass
+          tint={0.06}
+          scale={20}
+          bevelDepth={8}
+          className="p-6 border border-white/15 bg-neutral-950/80 rounded-2xl shadow-xl"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h4 className="font-bold text-white">Need multi-employee payroll detail?</h4>
+              <p className="text-sm text-neutral-400">
+                Explore our full staff workpaper tool and state-by-state wage directory.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/restaurant-tip-credit-calculator"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-white text-black hover:bg-neutral-200 shadow-md transition-colors"
+              >
+                Restaurant Staff Tool
+                <IconArrowRight className="size-3.5" />
+              </Link>
+              <Link
+                to="/tip-credit-rules-by-state"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors"
+              >
+                50-State Rules
+              </Link>
+            </div>
+          </div>
+        </LiquidGlass>
+      </section>
       </div>
-
-      <p className="last-updated">Last updated: October 2026</p>
     </>
   );
 };
+
+export default HomePage;

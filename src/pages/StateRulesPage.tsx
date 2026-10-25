@@ -57,22 +57,22 @@ export const StateRulesPage: React.FC = () => {
       </p>
 
       {/* Filter and Search Bar */}
-      <div className="my-4 p-3 bg-slate-50 border border-slate-200 rounded-lg flex flex-wrap gap-3 items-center justify-between">
+      <div className="my-6 p-4 bg-slate-900/60 border border-white/10 rounded-2xl backdrop-blur-xl flex flex-wrap gap-3 items-center justify-between shadow-lg">
         <input
           type="text"
           placeholder="Search states (e.g. Texas, California)..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="border border-slate-300 rounded-lg px-3 py-2 text-sm bg-white flex-1 min-w-[200px]"
+          className="border border-white/15 rounded-xl px-3.5 py-2 text-sm bg-black/90 text-white placeholder-neutral-500 flex-1 min-w-[200px] outline-none focus:border-white"
         />
         <div className="flex gap-2">
           <button
             type="button"
             onClick={() => setFilterType('all')}
-            className={`px-3 py-1.5 text-xs rounded-lg font-medium transition ${
+            className={`px-3.5 py-2 text-xs rounded-xl font-bold transition ${
               filterType === 'all'
-                ? 'bg-teal-700 text-white'
-                : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100'
+                ? 'bg-white text-black shadow-md'
+                : 'bg-white/10 border border-white/10 text-neutral-300 hover:bg-white/15'
             }`}
           >
             All States ({STATE_RULES.length})
@@ -80,10 +80,10 @@ export const StateRulesPage: React.FC = () => {
           <button
             type="button"
             onClick={() => setFilterType('no-credit')}
-            className={`px-3 py-1.5 text-xs rounded-lg font-medium transition ${
+            className={`px-3.5 py-2 text-xs rounded-xl font-bold transition ${
               filterType === 'no-credit'
-                ? 'bg-teal-700 text-white'
-                : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100'
+                ? 'bg-white text-black shadow-md'
+                : 'bg-white/10 border border-white/10 text-neutral-300 hover:bg-white/15'
             }`}
           >
             No Tip Credit ({STATES_NO_TIP_CREDIT.length})
@@ -91,41 +91,41 @@ export const StateRulesPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <table>
+      <div className="overflow-x-auto rounded-2xl border border-white/15 bg-black/60 shadow-xl">
+        <table className="m-0 border-none">
           <thead>
-            <tr>
-              <th>State</th>
-              <th>Tipped minimum cash wage (2026)</th>
-              <th>Tip credit allowed</th>
-              <th>Notes</th>
-              <th>Quick Tool</th>
+            <tr className="border-b border-white/15 bg-white/[0.02]">
+              <th className="py-3 px-3 font-bold text-white">State</th>
+              <th className="py-3 px-3 font-bold text-white">Tipped minimum cash wage (2026)</th>
+              <th className="py-3 px-3 font-bold text-white">Tip credit allowed</th>
+              <th className="py-3 px-3 font-bold text-white">Notes</th>
+              <th className="py-3 px-3 font-bold text-white">Quick Tool</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-white/10">
             {filteredStates.map((row) => (
-              <tr key={row.state}>
-                <td className="font-semibold text-slate-900">{row.state}</td>
-                <td className="font-medium text-slate-800">{row.cashWage}</td>
-                <td>
+              <tr key={row.state} className="hover:bg-white/[0.02]">
+                <td className="font-bold text-white py-3 px-3">{row.state}</td>
+                <td className="font-semibold text-neutral-200 py-3 px-3 tabular-nums">{row.cashWage}</td>
+                <td className="py-3 px-3">
                   <span
-                    className={`inline-block px-2 py-0.5 rounded text-xs font-semibold ${
+                    className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold ${
                       row.tipCreditAllowed === 'No'
-                        ? 'bg-amber-100 text-amber-800'
+                        ? 'bg-white/10 text-neutral-300 border border-white/20'
                         : row.tipCreditAllowed === 'Conditional'
-                        ? 'bg-purple-100 text-purple-800'
-                        : 'bg-slate-100 text-slate-700'
+                        ? 'bg-white/15 text-white border border-white/25'
+                        : 'bg-white text-black border border-white font-bold'
                     }`}
                   >
                     {row.tipCreditAllowed}
                   </span>
                 </td>
-                <td className="text-slate-600 text-sm">{row.notes}</td>
-                <td>
+                <td className="text-neutral-300 text-xs sm:text-sm py-3 px-3">{row.notes}</td>
+                <td className="py-3 px-3">
                   <button
                     type="button"
                     onClick={() => handleUseInCalculator(row.state)}
-                    className="text-xs text-teal-700 hover:text-teal-900 font-semibold underline whitespace-nowrap"
+                    className="text-xs text-white hover:text-neutral-300 font-bold underline whitespace-nowrap cursor-pointer"
                   >
                     Estimate &rarr;
                   </button>

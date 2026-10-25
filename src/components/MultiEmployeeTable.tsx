@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { formatUSD, CONFIG } from '../utils/calculator';
 import { EmployeeRow } from '../types';
+import { LiquidGlass } from '@/components/ui/liquid-glass';
+import { IconUserPlus, IconTrash, IconRotate, IconUsers } from '@tabler/icons-react';
 
 export const MultiEmployeeTable: React.FC = () => {
   const [employees, setEmployees] = useState<EmployeeRow[]>([
@@ -68,56 +70,68 @@ export const MultiEmployeeTable: React.FC = () => {
   };
 
   return (
-    <div className="my-6 border border-slate-200 rounded-xl p-4 bg-white shadow-sm">
+    <LiquidGlass
+      tint={0.06}
+      scale={24}
+      bevelDepth={10}
+      className="my-8 border border-white/15 bg-neutral-950/80 rounded-3xl shadow-xl"
+      contentClassName="p-6 sm:p-8"
+    >
       <div className="flex flex-wrap justify-between items-center mb-3 gap-2">
-        <h3 className="text-lg font-bold text-slate-900 m-0">
-          Interactive Multi-Employee Calculation (Month by Month)
-        </h3>
+        <div className="flex items-center gap-2">
+          <IconUsers className="size-5 text-white" />
+          <h3 className="text-xl font-bold text-white m-0 tracking-tight">
+            Interactive Multi-Employee Calculation (Month by Month)
+          </h3>
+        </div>
         <button
           type="button"
           onClick={handleResetDefaults}
-          className="text-xs text-teal-700 hover:text-teal-900 underline"
+          className="text-xs text-neutral-300 hover:text-white underline inline-flex items-center gap-1 cursor-pointer"
         >
-          Reset to Restaurant Example
+          <IconRotate className="size-3.5" />
+          Reset Example
         </button>
       </div>
-      <p className="text-sm text-slate-600 mb-4">
+
+      <p className="text-sm text-neutral-400 mb-6">
         As IRS regulations require, Line 2 cannot net across employees; one employee’s surplus cash wages
         cannot offset another’s shortfall.
       </p>
 
-      <div className="overflow-x-auto">
-        <table className="text-sm">
+      <div className="overflow-x-auto rounded-2xl border border-white/15 bg-black/60">
+        <table className="w-full text-left text-xs sm:text-sm border-collapse m-0 border-none">
           <thead>
-            <tr>
-              <th>Employee</th>
-              <th>Hours</th>
-              <th>Cash wage</th>
-              <th>Tips reported</th>
-              <th>$5.15 × hours</th>
-              <th>Cash wages paid</th>
-              <th>Excluded tips</th>
-              <th>Creditable tips</th>
-              <th>Action</th>
+            <tr className="border-b border-white/15 text-neutral-400 bg-white/[0.02]">
+              <th className="py-3 px-3 font-bold text-white">Employee</th>
+              <th className="py-3 px-3 font-bold text-white">Hours</th>
+              <th className="py-3 px-3 font-bold text-white">Cash Wage</th>
+              <th className="py-3 px-3 font-bold text-white">Tips Reported</th>
+              <th className="py-3 px-3 font-bold text-white">$5.15 × Hours</th>
+              <th className="py-3 px-3 font-bold text-white">Wages Paid</th>
+              <th className="py-3 px-3 font-bold text-white">Excluded Tips</th>
+              <th className="py-3 px-3 font-bold text-white">Creditable Tips</th>
+              <th className="py-3 px-3 font-bold text-white">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="divide-y divide-white/10">
             {rows.map((row) => (
-              <tr key={row.id}>
-                <td className="font-medium text-slate-800">{row.name}</td>
-                <td>{row.hours}</td>
-                <td>{formatUSD(row.cashWage)}</td>
-                <td>{formatUSD(row.tipsReported)}</td>
-                <td>{formatUSD(row.floorPay)}</td>
-                <td>{formatUSD(row.cashPaid)}</td>
-                <td className="text-amber-800">{formatUSD(row.excludedTips)}</td>
-                <td className="font-semibold text-teal-800">{formatUSD(row.creditableTips)}</td>
-                <td>
+              <tr key={row.id} className="hover:bg-white/[0.02] transition-colors">
+                <td className="py-3 px-3 font-bold text-white">{row.name}</td>
+                <td className="py-3 px-3 text-neutral-300 tabular-nums">{row.hours}</td>
+                <td className="py-3 px-3 text-neutral-300 tabular-nums">{formatUSD(row.cashWage)}</td>
+                <td className="py-3 px-3 text-white tabular-nums">{formatUSD(row.tipsReported)}</td>
+                <td className="py-3 px-3 text-neutral-500 tabular-nums">{formatUSD(row.floorPay)}</td>
+                <td className="py-3 px-3 text-neutral-500 tabular-nums">{formatUSD(row.cashPaid)}</td>
+                <td className="py-3 px-3 text-neutral-400 tabular-nums font-medium">{formatUSD(row.excludedTips)}</td>
+                <td className="py-3 px-3 font-bold text-white tabular-nums">{formatUSD(row.creditableTips)}</td>
+                <td className="py-3 px-3">
                   <button
                     type="button"
                     onClick={() => handleRemove(row.id)}
-                    className="text-xs text-rose-600 hover:text-rose-800 font-medium"
+                    className="text-xs text-neutral-400 hover:text-white font-medium inline-flex items-center gap-1 cursor-pointer transition-colors"
                   >
+                    <IconTrash className="size-3.5" />
                     Delete
                   </button>
                 </td>
@@ -125,43 +139,44 @@ export const MultiEmployeeTable: React.FC = () => {
             ))}
           </tbody>
           <tfoot>
-            <tr className="bg-slate-100 font-semibold text-slate-900 border-t-2 border-slate-300">
-              <td>Total</td>
-              <td>{rows.reduce((acc, r) => acc + r.hours, 0)}</td>
-              <td>—</td>
-              <td>{formatUSD(totalReported)}</td>
-              <td>—</td>
-              <td>—</td>
-              <td className="text-amber-900">{formatUSD(totalExcluded)}</td>
-              <td className="text-teal-900 font-bold">{formatUSD(totalCreditableTips)}</td>
-              <td>—</td>
+            <tr className="bg-white text-black font-extrabold border-t border-white">
+              <td className="py-3 px-3 text-black font-bold">Total Staff</td>
+              <td className="py-3 px-3 tabular-nums">{rows.reduce((acc, r) => acc + r.hours, 0)}</td>
+              <td className="py-3 px-3">—</td>
+              <td className="py-3 px-3 tabular-nums">{formatUSD(totalReported)}</td>
+              <td className="py-3 px-3">—</td>
+              <td className="py-3 px-3">—</td>
+              <td className="py-3 px-3 text-neutral-800 tabular-nums">{formatUSD(totalExcluded)}</td>
+              <td className="py-3 px-3 text-black font-black text-base tabular-nums">{formatUSD(totalCreditableTips)}</td>
+              <td className="py-3 px-3">—</td>
             </tr>
           </tfoot>
         </table>
       </div>
 
-      <div className="mt-3 p-3 bg-teal-50 border border-teal-200 rounded-lg flex flex-wrap justify-between items-center text-sm">
+      <div className="mt-5 p-4 bg-white/[0.04] border border-white/15 rounded-2xl flex flex-wrap justify-between items-center gap-3 text-sm">
         <div>
-          <span className="font-semibold text-slate-800">Total creditable tips: </span>
-          <span className="text-teal-900 font-bold">{formatUSD(totalCreditableTips)}</span>
+          <span className="text-neutral-400">Total creditable tips: </span>
+          <span className="text-white font-bold tabular-nums">{formatUSD(totalCreditableTips)}</span>
         </div>
         <div>
-          <span className="font-semibold text-slate-800">Total estimated monthly credit (7.65%): </span>
-          <span className="text-teal-900 font-bold text-base">{formatUSD(totalCredit)}</span>
+          <span className="text-neutral-400">Estimated monthly tax credit (7.65%): </span>
+          <span className="text-white font-black text-base tabular-nums">{formatUSD(totalCredit)}</span>
         </div>
       </div>
 
-      <form onSubmit={handleAddEmployee} className="mt-4 pt-3 border-t border-slate-200">
-        <span className="text-xs font-semibold text-slate-700 block mb-2 uppercase tracking-wider">
-          Add Employee to Sample
+      <form onSubmit={handleAddEmployee} className="mt-6 pt-5 border-t border-white/10">
+        <span className="text-xs font-bold text-white block mb-3 uppercase tracking-wider flex items-center gap-1.5">
+          <IconUserPlus className="size-4 text-white" />
+          Add Employee to Sample Workpaper
         </span>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
           <input
             type="text"
-            placeholder="Role/Name"
+            placeholder="Role / Name"
             value={newName}
             onChange={(e) => setNewName(e.target.value)}
-            className="border border-slate-300 rounded px-2 py-1.5 text-xs"
+            className="bg-black border border-white/20 rounded-xl px-3 py-2 text-xs text-white placeholder-neutral-500 focus:border-white outline-none"
             required
           />
           <input
@@ -170,7 +185,7 @@ export const MultiEmployeeTable: React.FC = () => {
             placeholder="Hours (e.g. 140)"
             value={newHours}
             onChange={(e) => setNewHours(e.target.value)}
-            className="border border-slate-300 rounded px-2 py-1.5 text-xs"
+            className="bg-black border border-white/20 rounded-xl px-3 py-2 text-xs text-white placeholder-neutral-500 focus:border-white outline-none"
             required
           />
           <input
@@ -179,7 +194,7 @@ export const MultiEmployeeTable: React.FC = () => {
             placeholder="Cash Wage $/hr"
             value={newWage}
             onChange={(e) => setNewWage(e.target.value)}
-            className="border border-slate-300 rounded px-2 py-1.5 text-xs"
+            className="bg-black border border-white/20 rounded-xl px-3 py-2 text-xs text-white placeholder-neutral-500 focus:border-white outline-none"
             required
           />
           <input
@@ -188,17 +203,19 @@ export const MultiEmployeeTable: React.FC = () => {
             placeholder="Tips Reported $"
             value={newTips}
             onChange={(e) => setNewTips(e.target.value)}
-            className="border border-slate-300 rounded px-2 py-1.5 text-xs"
+            className="bg-black border border-white/20 rounded-xl px-3 py-2 text-xs text-white placeholder-neutral-500 focus:border-white outline-none"
             required
           />
           <button
             type="submit"
-            className="bg-teal-700 text-white rounded px-3 py-1.5 text-xs font-semibold hover:bg-teal-800 col-span-2 sm:col-span-1"
+            className="bg-white hover:bg-neutral-200 text-black rounded-xl px-3 py-2 text-xs font-extrabold col-span-2 sm:col-span-1 shadow-md transition-all cursor-pointer"
           >
             + Add Staff
           </button>
         </div>
       </form>
-    </div>
+    </LiquidGlass>
   );
 };
+
+export default MultiEmployeeTable;
