@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://form8846calculator.com/sitemap.xml
+Sitemap: https://calculator.toolgenie.online/sitemap.xml

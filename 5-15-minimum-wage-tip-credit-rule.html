@@ -5,18 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Why the Tip Credit Uses $5.15 (and Never Changes)</title>
   <meta name="description" content="Why the FICA tip credit is stuck at $5.15 an hour, where the figure comes from, and how it changes your Line 2 calculation.">
-  <link rel="canonical" href="https://form8846calculator.com/5-15-minimum-wage-tip-credit-rule">
+  <link rel="canonical" href="https://calculator.toolgenie.online/5-15-minimum-wage-tip-credit-rule">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Why the Tip Credit Uses $5.15 (and Never Changes)">
+  <meta property="og:description" content="Why the FICA tip credit is stuck at $5.15 an hour, where the figure comes from, and how it changes your Line 2 calculation.">
+  <meta property="og:url" content="https://calculator.toolgenie.online/5-15-minimum-wage-tip-credit-rule">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Form8846Calculator">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Why the Tip Credit Uses $5.15 (and Never Changes)">
+  <meta name="twitter:description" content="Why the FICA tip credit is stuck at $5.15 an hour, where the figure comes from, and how it changes your Line 2 calculation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
   <header class="site-header">
     <div class="container">
-      <a href="/" class="site-brand">Form8846Calculator.com</a>
-      <nav class="site-nav">
+      <a href="/" class="site-brand">Form8846Calculator</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation"><span class="nav-toggle-icon"></span></button>
+      <nav class="site-nav" id="primary-nav">
         <a href="/">Calculator</a>
         <a href="/fica-tip-credit-calculator">FICA Tip Credit</a>
         <a href="/form-8846-instructions">Instructions</a>
-        <a href="/5-15-minimum-wage-tip-credit-rule">$5.15 Rule</a>
+        <a href="/5-15-minimum-wage-tip-credit-rule" class="active">$5.15 Rule</a>
         <a href="/restaurant-tip-credit-calculator">Restaurants</a>
         <a href="/salon-tip-credit-calculator">Salons</a>
         <a href="/tip-credit-rules-by-state">State Rules</a>
@@ -24,7 +39,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
       <h1>Why the Tip Credit Uses $5.15 (and Never Changes)</h1>
@@ -43,19 +58,21 @@
 
       <h2>How It Affects Your Line 2 Calculation</h2>
       <p>Line 2 removes the tips that merely bring an employee's cash pay up to $5.15. The calculation is done employee by employee and, for accuracy, month by month. Here is one month for one server:</p>
-      <table>
-        <thead>
-          <tr><th>Item</th><th>Calculation</th><th>Amount</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Hours worked</td><td>—</td><td>200</td></tr>
-          <tr><td>Pay at the $5.15 floor</td><td>200 × $5.15</td><td>$1,030.00</td></tr>
-          <tr><td>Cash wages paid ($3.50/hr)</td><td>200 × $3.50</td><td>$700.00</td></tr>
-          <tr><td>Excluded tips (Line 2 piece)</td><td>$1,030.00 − $700.00</td><td>$330.00</td></tr>
-          <tr><td>Tips reported that month</td><td>—</td><td>$1,900.00</td></tr>
-          <tr><td>Creditable tips for the month</td><td>$1,900.00 − $330.00</td><td>$1,570.00</td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Calculation</th><th>Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Hours worked</td><td>—</td><td>200</td></tr>
+            <tr><td>Pay at the $5.15 floor</td><td>200 × $5.15</td><td>$1,030.00</td></tr>
+            <tr><td>Cash wages paid ($3.50/hr)</td><td>200 × $3.50</td><td>$700.00</td></tr>
+            <tr><td>Excluded tips (Line 2 piece)</td><td>$1,030.00 − $700.00</td><td>$330.00</td></tr>
+            <tr><td>Tips reported that month</td><td>—</td><td>$1,900.00</td></tr>
+            <tr><td>Creditable tips for the month</td><td>$1,900.00 − $330.00</td><td>$1,570.00</td></tr>
+          </tbody>
+        </table>
+      </div>
       <p>If the same server had been paid $5.15 or more in cash, the excluded amount would be zero and the full $1,900 would stay creditable. The <a href="/form-8846-instructions">Form 8846 instructions page</a> shows how these monthly pieces roll into the annual Line 2 total.</p>
 
       <h2>What Happens If You Pay Above $5.15</h2>
@@ -91,7 +108,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-content">
       <div class="footer-links">
         <a href="/">Calculator</a>
         <a href="/fica-tip-credit-calculator">FICA Tip Credit</a>
@@ -102,9 +119,32 @@
         <a href="/disclaimer">Disclaimer</a>
         <a href="/terms">Terms</a>
       </div>
-      <p>© 2026 Form8846Calculator.com. Estimates only. Not tax advice.</p>
+      <div class="footer-copyright">
+        <p>© 2026 Form8846Calculator. Estimates only. Not tax advice.</p>
+        <div class="footer-updated-line">Last updated: October 2026</div>
+      </div>
     </div>
   </footer>
+
+  <script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('primary-nav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+    }
+    var header = document.querySelector('.site-header');
+    if(header){
+      window.addEventListener('scroll', function(){
+        header.classList.toggle('scrolled', window.scrollY > 8);
+      }, { passive: true });
+    }
+  })();
+  </script>
 
   <script type="application/ld+json">
   {

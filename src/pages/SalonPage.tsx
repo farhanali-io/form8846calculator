@@ -1,0 +1,124 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
+
+export const SalonPage: React.FC = () => {
+  return (
+    <>
+      <SEO
+        title="Salon Tip Credit Calculator: Do You Qualify?"
+        description="Most salons do not qualify for the FICA tip credit. Here is the test, the exception for food-service salons, and what to check before filing."
+      />
+      <h1>Salon Tip Credit Calculator: Do Salons Qualify for Form 8846?</h1>
+
+      <p>
+        Most salons do not qualify for the FICA tip credit. The statute is limited to tips for providing,
+        delivering, or serving food or drinks. Hair, nail, and spa services fall outside that definition. This
+        page states the rule plainly, describes the narrow exception, and explains why booth renters never
+        generate a credit.
+      </p>
+
+      <h2>The Qualification Test</h2>
+      <p>
+        IRC §45B requires that the tips be received for providing, delivering, or serving food or drinks in a
+        business where tipping is customary. Haircuts, coloring, manicures, massages, and similar beauty
+        services are not food or beverage service. Tips paid for those services therefore do not support a
+        Form 8846 credit, even when the salon correctly reports the tips and pays employer FICA.
+      </p>
+      <p>
+        The test is about the nature of the service, not about whether tipping occurs. A high-tip salon that
+        never serves food still fails the statutory test. For the full eligibility table, see the{' '}
+        <Link to="/fica-tip-credit-calculator">FICA tip credit guide</Link>.
+      </p>
+
+      <h2>The Exception: Food or Beverage Service</h2>
+      <p>
+        A salon that also operates a café, a bar, or a catering arm may generate creditable tips on the food
+        and beverage side only. Tips left for hair or spa work remain ineligible. Tips left for coffee,
+        drinks, or meals can qualify if every other requirement is met: the worker is an employee, the tips
+        are reported, employer FICA is paid, and the $5.15 floor is applied correctly.
+      </p>
+      <p>
+        Keep separate records. Mixing beauty-service tips with food-service tips on the same Form 8846 is a
+        common error and can invalidate the credit claim for the food portion as well.
+      </p>
+
+      <h2>Booth Renters and Independent Contractors</h2>
+      <p>
+        Many salons operate under a booth-rental or independent-contractor model. When a worker is correctly
+        classified as a contractor, the salon does not pay employer FICA on that worker's tips. Because the
+        credit is a recovery of employer FICA, there is nothing to recover and no credit arises.
+      </p>
+      <p>
+        Misclassification creates a different problem. If the IRS or a state agency later recharacterizes the
+        workers as employees, the salon can owe back FICA, penalties, and interest. The Form 8846 credit does
+        not solve that exposure; it only applies after employer FICA has actually been paid.
+      </p>
+
+      <h2>Employee vs Contractor: Why It Matters for the Credit</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Employer FICA paid?</th>
+            <th>Form 8846 credit possible?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Employee (W-2)</td>
+            <td>Yes, on reported tips</td>
+            <td>Only if the tips are for food or beverage service</td>
+          </tr>
+          <tr>
+            <td>Independent contractor (1099)</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>The table is binary for credit purposes. No employer FICA means no credit, regardless of how large the tips are.</p>
+
+      <h2>What Salons Should Do Instead</h2>
+      <p>
+        Salons that do not qualify for Form 8846 still have ordinary business deductions for supplies, rent,
+        equipment, and other operating costs. Those deductions are claimed on the regular business return and
+        are unrelated to the tip credit. Owners who have been told they can claim Form 8846 on beauty-service
+        tips should verify the advice against the statutory language before filing.
+      </p>
+      <p>
+        For the $5.15 floor that applies when food-service tips do exist, see the{' '}
+        <Link to="/5-15-minimum-wage-tip-credit-rule">$5.15 rule explainer</Link>. State cash-wage rules that
+        affect any tipped employees are summarized on the{' '}
+        <Link to="/tip-credit-rules-by-state">tip credit rules by state</Link> page.
+      </p>
+
+      <h2>FAQ</h2>
+      <h3>I have a salon with a coffee bar. Can I claim the credit on the coffee bar tips?</h3>
+      <p>
+        Possibly, if those tips meet every requirement: the workers are employees, the tips are for food or
+        beverage service, they are reported, employer FICA is paid, and the $5.15 calculation is applied
+        correctly. Keep the coffee-bar tips and hours separate from beauty-service tips.
+      </p>
+
+      <h3>Does the credit ever apply to barber or spa tips?</h3>
+      <p>
+        Under current law, no. The statute is limited to food and beverage service. Tips for hair, nails,
+        massage, or similar services do not qualify.
+      </p>
+
+      <h3>What if my tax preparer has claimed the credit for salon tips in prior years?</h3>
+      <p>
+        Review those returns. If the tips were for beauty services rather than food or beverage service, the
+        credit may have been claimed in error. Discuss any needed amendments with a tax professional.
+      </p>
+
+      <p className="mt-6">
+        If your operation includes a food or beverage component and you want to run the numbers, start with
+        the <Link to="/">Form 8846 calculator</Link>.
+      </p>
+
+      <p className="last-updated">Last updated: October 2026</p>
+    </>
+  );
+};

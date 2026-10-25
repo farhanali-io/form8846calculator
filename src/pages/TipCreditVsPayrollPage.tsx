@@ -1,0 +1,180 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
+
+export const TipCreditVsPayrollPage: React.FC = () => {
+  return (
+    <>
+      <SEO
+        title="Tip Credit vs Payroll Tax Credit: What's the Difference"
+        description="The FICA tip credit is not a payroll tax refund. Clear comparison of Form 8846, wage-law tip credit, and other payroll credits."
+      />
+      <h1>Tip Credit vs Payroll Tax Credit: What's the Difference?</h1>
+
+      <p>
+        "Tip credit" means at least three different things depending on who is speaking. Confusing them
+        produces the wrong form, the wrong year, and the wrong expectation about cash flow. This page separates
+        the concepts so you can see which one Form 8846 actually is.
+      </p>
+
+      <h2>Three Different "Tip Credits"</h2>
+      <ol>
+        <li>
+          <strong>The wage-law tip credit.</strong> Under the Fair Labor Standards Act and parallel state laws,
+          an employer may pay a tipped employee a cash wage below the full minimum and count tips toward the
+          remainder. This is a labor-law rule, not a tax credit.
+        </li>
+        <li>
+          <strong>The FICA tip credit (Form 8846).</strong> A federal income-tax credit equal to the employer's
+          7.65% Social Security and Medicare tax on certain reported tips. It appears on the income-tax return,
+          not on Form 941.
+        </li>
+        <li>
+          <strong>Informal use for employee-side credits.</strong> Some people loosely call the Earned Income
+          Tax Credit or other refundable credits a "tip credit." Those credits belong to the employee, not the
+          employer, and have nothing to do with Form 8846.
+        </li>
+      </ol>
+
+      <h2>What the FICA Tip Credit Actually Is</h2>
+      <p>
+        Employers pay 7.65% employer FICA on reported tips. Section 45B lets qualifying food and beverage
+        employers claim a credit for that tax on the portion of tips that exceeds a $5.15 hourly floor. The
+        credit is nonrefundable, claimed on Form 8846, and carried to Form 3800. It does not reduce the
+        deposits you make with Form 941. Full details are on the{' '}
+        <Link to="/fica-tip-credit-calculator">FICA tip credit guide</Link>.
+      </p>
+
+      <h2>What the Wage-Law Tip Credit Is</h2>
+      <p>
+        The wage-law tip credit is the rule that lets an employer pay a cash wage as low as $2.13 (federal) or
+        a higher state floor and still meet the minimum-wage obligation as long as tips make up the difference.
+        It is enforced by the Department of Labor and state labor agencies. It has no Form 8846 component and
+        does not appear on any income-tax return. State variations are summarized on the{' '}
+        <Link to="/tip-credit-rules-by-state">tip credit rules by state</Link> page.
+      </p>
+
+      <h2>Other Payroll Tax Credits You Should Not Confuse With Form 8846</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Credit</th>
+            <th>Form</th>
+            <th>What it offsets</th>
+            <th>Typical trigger</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Employee Retention Credit (ERC)</td>
+            <td>Form 941-X (prior years)</td>
+            <td>Employer payroll tax for specific pandemic-era quarters</td>
+            <td>Qualified wages in 2020–2021 periods (now closed for most new claims)</td>
+          </tr>
+          <tr>
+            <td>Work Opportunity Tax Credit (WOTC)</td>
+            <td>Form 5884 / Form 3800</td>
+            <td>Income tax</td>
+            <td>Hiring workers from targeted groups</td>
+          </tr>
+          <tr>
+            <td>Research &amp; Development credit</td>
+            <td>Form 6765 / Form 3800</td>
+            <td>Income tax</td>
+            <td>Qualified research expenses (rare for pure restaurants)</td>
+          </tr>
+          <tr>
+            <td>Sick and Family Leave credits</td>
+            <td>Form 941-X</td>
+            <td>Employer payroll tax for specific leave periods</td>
+            <td>Qualified sick or family leave wages in covered periods</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        None of these credits uses the $5.15 tip floor or Form 8846. Mixing them with the FICA tip credit is a
+        common source of filing errors.
+      </p>
+
+      <h2>Comparison Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Credit type</th>
+            <th>Who claims it</th>
+            <th>Which form</th>
+            <th>Which tax it offsets</th>
+            <th>Eligibility trigger</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wage-law tip credit</td>
+            <td>Employer (payroll practice)</td>
+            <td>None (labor law)</td>
+            <td>None — it is a wage-payment rule</td>
+            <td>Tipped occupation + notice + tips covering the gap</td>
+          </tr>
+          <tr>
+            <td>FICA tip credit</td>
+            <td>Employer (or pass-through owner)</td>
+            <td>Form 8846 → Form 3800</td>
+            <td>Income tax</td>
+            <td>Reported tips for food/beverage service on which employer FICA was paid</td>
+          </tr>
+          <tr>
+            <td>Employee Retention Credit</td>
+            <td>Employer</td>
+            <td>Form 941-X</td>
+            <td>Employer payroll tax (prior years)</td>
+            <td>Qualified wages in covered pandemic periods</td>
+          </tr>
+          <tr>
+            <td>Work Opportunity Tax Credit</td>
+            <td>Employer</td>
+            <td>Form 5884 → Form 3800</td>
+            <td>Income tax</td>
+            <td>Hiring from targeted groups</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>When You Need a CPA</h2>
+      <p>
+        A single-location restaurant with clean tip reports can often prepare Form 8846 from payroll data.
+        Multi-unit operators, partnerships with pass-through credits on Schedule K-1, and any return that also
+        involves ERC, WOTC, or amended Form 941-X filings should involve a tax professional. The{' '}
+        <Link to="/form-8846-instructions">Form 8846 instructions page</Link> shows the line-by-line
+        mechanics; a CPA decides how those numbers interact with the rest of the return.
+      </p>
+
+      <h2>FAQ</h2>
+      <h3>Can I claim the FICA tip credit and a state tip credit in the same year?</h3>
+      <p>
+        Yes. The wage-law tip credit (state or federal) and the FICA tip credit operate at different levels of
+        government and are not mutually exclusive. One affects the cash wage you pay; the other is an
+        income-tax credit.
+      </p>
+
+      <h3>Does Form 8846 reduce what I deposit with Form 941?</h3>
+      <p>
+        No. You continue to deposit and report employer FICA on tips in the ordinary way. The credit is claimed
+        later on the income-tax return.
+      </p>
+
+      <h3>Is the FICA tip credit the same as a payroll-tax refund?</h3>
+      <p>
+        No. It is a nonrefundable income-tax credit. It cannot generate a cash refund by itself and does not
+        appear on Form 941.
+      </p>
+
+      <p className="mt-6">
+        For the statutory $5.15 floor that drives the FICA calculation, see the{' '}
+        <Link to="/5-15-minimum-wage-tip-credit-rule">$5.15 rule explainer</Link>. To run the numbers, use the{' '}
+        <Link to="/">Form 8846 calculator</Link>.
+      </p>
+
+      <p className="last-updated">Last updated: October 2026</p>
+    </>
+  );
+};

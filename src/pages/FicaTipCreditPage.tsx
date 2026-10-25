@@ -1,0 +1,166 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
+
+export const FicaTipCreditPage: React.FC = () => {
+  return (
+    <>
+      <SEO
+        title="FICA Tip Credit Calculator: Who Qualifies"
+        description="What the FICA tip credit is, which employers and tips qualify, and how to estimate it. Plain-English guide with an eligibility table."
+      />
+      <h1>FICA Tip Credit Calculator: What It Is and Who Qualifies</h1>
+
+      <p>
+        The FICA tip credit gives food and beverage employers back part of the payroll tax they pay on
+        employee tips. This page explains who can claim it and which tips count. When you are ready for
+        numbers, use the <Link to="/">Form 8846 calculator</Link>.
+      </p>
+
+      <h2>What the FICA Tip Credit Is</h2>
+      <p>
+        Employers pay 7.65% in Social Security and Medicare tax on wages, including the tips employees report.
+        Section 45B of the tax code lets certain employers claim a credit for part of that tax on tips. You
+        claim it on Form 8846, and it counts as part of the general business credit.
+      </p>
+      <p>
+        This is not a refund of tax withheld from your employees. It lowers your own income tax bill. If you
+        cannot use all of it in one year, the unused amount can be carried to other years under the general
+        business credit rules: generally a 1-year carryback and a 20-year carryforward under IRC §39. Confirm
+        the current rule with your tax preparer before relying on it.
+      </p>
+
+      <h2>Who Qualifies</h2>
+      <h3>The business</h3>
+      <p>
+        Your employees must provide, deliver, or serve food or drinks, and customers must customarily tip for
+        that service. Restaurants, bars, cafes, and catering or delivery operations can qualify on that basis.
+        Partnerships and S corporations can qualify too, and the credit flows through to the owners.
+      </p>
+
+      <h3>The workers</h3>
+      <p>
+        The credit is built on employee tips. Workers you correctly treat as independent contractors do not
+        count, because you do not pay employer FICA on their pay.
+      </p>
+
+      <h3>The tax paid</h3>
+      <p>
+        Employees must report tips to you, and you must have paid or incurred employer FICA tax on them. A tip
+        that was never reported, and never taxed, is outside the credit.
+      </p>
+
+      <h2>Credit-Eligible Tips vs Non-Eligible Tips</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Situation</th>
+            <th>Credit-eligible</th>
+            <th>Not credit-eligible</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Type of service</td>
+            <td>Tips for serving, delivering, or providing food and drinks</td>
+            <td>Tips for haircuts, spa work, valet, hotel, or other non-food services</td>
+          </tr>
+          <tr>
+            <td>How the tip reaches the employee</td>
+            <td>
+              Cash tips reported to you, card tips you paid out and reported, and employee shares of a tip pool
+            </td>
+            <td>Tips an employee kept and never reported</td>
+          </tr>
+          <tr>
+            <td>Voluntary or required</td>
+            <td>Amounts customers choose to give</td>
+            <td>
+              Mandatory service charges and automatic fees the customer cannot decline, which are generally wages
+            </td>
+          </tr>
+          <tr>
+            <td>Wage floor</td>
+            <td>Tips above what is needed to lift cash wages to $5.15 an hour</td>
+            <td>Tips needed to bring an employee's wages up to $5.15 an hour</td>
+          </tr>
+          <tr>
+            <td>Whose tax</td>
+            <td>Your 7.65% employer share</td>
+            <td>The 7.65% withheld from the employee</td>
+          </tr>
+          <tr>
+            <td>Social Security wage base</td>
+            <td>Tips under the base, at the full 7.65%</td>
+            <td>
+              Tips over the base at the 6.2% rate (the 1.45% Medicare part still counts)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The $5.15 line trips up a lot of owners. Our{' '}
+        <Link to="/5-15-minimum-wage-tip-credit-rule">$5.15 rule guide</Link> explains where it comes from
+        and why it never moves.
+      </p>
+
+      <h2>What the Credit Does on Your Return</h2>
+      <ul>
+        <li>
+          <strong>It lowers income tax.</strong> The credit is nonrefundable. It cannot push your tax below zero.
+        </li>
+        <li>
+          <strong>It is claimed on Form 3800.</strong> Form 8846 feeds the General Business Credit. Pass-through
+          owners receive their share on a Schedule K-1.
+        </li>
+        <li>
+          <strong>It trims your deduction.</strong> You cannot deduct the same amount as payroll expense.
+        </li>
+        <li>
+          <strong>It does not change your deposits.</strong> You still withhold, deposit, and report FICA on Form
+          941 as usual. The credit shows up only on the income tax return.
+        </li>
+      </ul>
+
+      <h2>How to Estimate Your Credit</h2>
+      <p>
+        For each tipped employee, you need four numbers: reported tips, hours worked, cash wages paid, and
+        wages plus tips for the year (to check the wage base). Payroll reports usually have all four. Box 7 of
+        the W-2 shows Social Security tips, and Form 941 totals them by quarter. Large establishments that file
+        Form 8027 can use it to cross-check tip totals.
+      </p>
+      <p>
+        Enter the figures in the <Link to="/">Form 8846 calculator</Link> for a quick estimate. To see how each
+        number lands on the actual form, follow the{' '}
+        <Link to="/form-8846-instructions">line-by-line Form 8846 instructions</Link>.
+      </p>
+
+      <h2>FAQ</h2>
+      <h3>Is the FICA tip credit the same as the tip credit that lets me pay a lower cash wage?</h3>
+      <p>
+        No. The wage-law tip credit lets an employer count tips toward the minimum wage and pay a lower cash
+        wage. The FICA tip credit is a federal income tax credit for the employer payroll tax paid on tips.
+        They are separate rules with separate purposes.
+      </p>
+
+      <h3>Can I claim the credit if I use a payroll provider?</h3>
+      <p>
+        Yes. The provider handles payroll tax filings, but you or your tax preparer claim the credit on your
+        income tax return. Ask the provider for a report of tips, hours, and cash wages by employee.
+      </p>
+
+      <h3>Can a sole proprietor claim the credit?</h3>
+      <p>
+        Yes. A sole proprietor files Form 8846 with the individual return and carries the credit to Form 3800.
+      </p>
+
+      <h3>Does claiming the credit change what I deposit on Form 941?</h3>
+      <p>
+        No. Keep depositing and reporting FICA taxes the same way. The credit is claimed later, on your income
+        tax return.
+      </p>
+
+      <p className="last-updated">Last updated: October 2026</p>
+    </>
+  );
+};

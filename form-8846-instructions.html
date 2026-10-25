@@ -5,17 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form 8846 Instructions: Line-by-Line Walkthrough</title>
   <meta name="description" content="Line-by-line Form 8846 instructions for restaurant employers: what goes on Lines 1 to 6, how to figure Line 2, and where the credit is reported.">
-  <link rel="canonical" href="https://form8846calculator.com/form-8846-instructions">
+  <link rel="canonical" href="https://calculator.toolgenie.online/form-8846-instructions">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Form 8846 Instructions: Line-by-Line Walkthrough">
+  <meta property="og:description" content="Line-by-line Form 8846 instructions for restaurant employers: what goes on Lines 1 to 6, how to figure Line 2, and where the credit is reported.">
+  <meta property="og:url" content="https://calculator.toolgenie.online/form-8846-instructions">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Form8846Calculator">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Form 8846 Instructions: Line-by-Line Walkthrough">
+  <meta name="twitter:description" content="Line-by-line Form 8846 instructions for restaurant employers: what goes on Lines 1 to 6, how to figure Line 2, and where the credit is reported.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
   <header class="site-header">
     <div class="container">
-      <a href="/" class="site-brand">Form8846Calculator.com</a>
-      <nav class="site-nav">
+      <a href="/" class="site-brand">Form8846Calculator</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation"><span class="nav-toggle-icon"></span></button>
+      <nav class="site-nav" id="primary-nav">
         <a href="/">Calculator</a>
         <a href="/fica-tip-credit-calculator">FICA Tip Credit</a>
-        <a href="/form-8846-instructions">Instructions</a>
+        <a href="/form-8846-instructions" class="active">Instructions</a>
         <a href="/5-15-minimum-wage-tip-credit-rule">$5.15 Rule</a>
         <a href="/restaurant-tip-credit-calculator">Restaurants</a>
         <a href="/salon-tip-credit-calculator">Salons</a>
@@ -24,7 +39,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="container">
 
       <h1>Form 8846 Instructions: Line-by-Line Walkthrough</h1>
@@ -57,16 +72,18 @@
         <li>Add up the excluded amounts for all employees and all months.</li>
       </ol>
       <p>Here is one employee for one month. She worked 160 hours at a $2.13 cash wage and reported $1,400 in tips.</p>
-      <table>
-        <thead>
-          <tr><th>Item</th><th>Calculation</th><th>Amount</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Pay at the $5.15 floor</td><td>160 × $5.15</td><td>$824.00</td></tr>
-          <tr><td>Cash wages paid</td><td>160 × $2.13</td><td>$340.80</td></tr>
-          <tr><td>Excluded tips</td><td>$824.00 - $340.80</td><td>$483.20</td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Item</th><th>Calculation</th><th>Amount</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Pay at the $5.15 floor</td><td>160 × $5.15</td><td>$824.00</td></tr>
+            <tr><td>Cash wages paid</td><td>160 × $2.13</td><td>$340.80</td></tr>
+            <tr><td>Excluded tips</td><td>$824.00 - $340.80</td><td>$483.20</td></tr>
+          </tbody>
+        </table>
+      </div>
       <p>Do not net across employees. If one person earns more than $5.15 an hour in cash, that surplus does not offset a shortfall for someone else.</p>
 
       <h2>Line 3: Creditable Tips</h2>
@@ -89,19 +106,21 @@
       <p>Add Lines 4 and 5. Partnerships and S corporations report the total on Schedule K so it passes through to the owners. Everyone else carries the total to Form 3800, Part III, line 4f, where it becomes part of the general business credit.</p>
 
       <h2>How the Calculator Maps to the Form</h2>
-      <table>
-        <thead>
-          <tr><th>Calculator field</th><th>Form 8846 line</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Total tips reported</td><td>Line 1</td><td>Only tips with employer FICA paid</td></tr>
-          <tr><td>Hours worked and cash wages paid</td><td>Line 2</td><td>Calculator uses hours × $5.15 minus cash wages, floored at zero</td></tr>
-          <tr><td>Creditable tips (result)</td><td>Line 3</td><td>Line 1 minus Line 2</td></tr>
-          <tr><td>Estimated credit (result)</td><td>Line 4</td><td>7.65% of creditable tips</td></tr>
-          <tr><td>Tips above the wage base (optional)</td><td>Line 4, checkbox and attachment</td><td>Reduces the 6.2% portion for high earners</td></tr>
-          <tr><td>Not calculated</td><td>Lines 5 and 6</td><td>Take pass-through amounts from your K-1</td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Calculator field</th><th>Form 8846 line</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Total tips reported</td><td>Line 1</td><td>Only tips with employer FICA paid</td></tr>
+            <tr><td>Hours worked and cash wages paid</td><td>Line 2</td><td>Calculator uses hours × $5.15 minus cash wages, floored at zero</td></tr>
+            <tr><td>Creditable tips (result)</td><td>Line 3</td><td>Line 1 minus Line 2</td></tr>
+            <tr><td>Estimated credit (result)</td><td>Line 4</td><td>7.65% of creditable tips</td></tr>
+            <tr><td>Tips above the wage base (optional)</td><td>Line 4, checkbox and attachment</td><td>Reduces the 6.2% portion for high earners</td></tr>
+            <tr><td>Not calculated</td><td>Lines 5 and 6</td><td>Take pass-through amounts from your K-1</td></tr>
+          </tbody>
+        </table>
+      </div>
       <p>The calculator works from totals. If your staff has mixed pay rates, run it once per employee and add the results, or follow the monthly method above.</p>
 
       <h2>After You Complete the Form</h2>
@@ -132,7 +151,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-content">
       <div class="footer-links">
         <a href="/">Calculator</a>
         <a href="/fica-tip-credit-calculator">FICA Tip Credit</a>
@@ -143,9 +162,32 @@
         <a href="/disclaimer">Disclaimer</a>
         <a href="/terms">Terms</a>
       </div>
-      <p>© 2026 Form8846Calculator.com. Estimates only. Not tax advice.</p>
+      <div class="footer-copyright">
+        <p>© 2026 Form8846Calculator. Estimates only. Not tax advice.</p>
+        <div class="footer-updated-line">Last updated: October 2026</div>
+      </div>
     </div>
   </footer>
+
+  <script>
+  (function(){
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.getElementById('primary-nav');
+    if(toggle && nav){
+      toggle.addEventListener('click', function(){
+        var expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
+    }
+    var header = document.querySelector('.site-header');
+    if(header){
+      window.addEventListener('scroll', function(){
+        header.classList.toggle('scrolled', window.scrollY > 8);
+      }, { passive: true });
+    }
+  })();
+  </script>
 
   <script type="application/ld+json">
   {
